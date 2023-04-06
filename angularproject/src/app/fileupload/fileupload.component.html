@@ -1,0 +1,35 @@
+
+ <div class="container" id="fullclass" #fullclass>
+  
+  <div class="main-content">
+    <div class="icon" [hidden]="csvbool">
+      <div class="img"><img style='width:120px; height:150px; margin-bottom:-20px'src="assets/csvcsv.png" alt=""></div>
+      <div style="font-weight: bold;">{{filename}}</div>
+      <div class="message" [hidden]="linebool">{{message}}</div>
+      <div class="buttons-div"> 
+        <div ><button class="butts" (click)="onUpload()">Upload</button></div>
+        <div ><button class="butts" (click)="del()">Clear</button></div>
+      </div>
+    </div>
+    <div class="upload-contents">
+      <p class="file-text">File Upload</p>
+      <div><img style='width:150px; height:150px' src="assets/uploadimg.png" alt=""></div>
+      <p class="para">   
+        Upload only csv files 
+      </p>
+      <p><input type="file" value="error" (change)="onFileSubmit($event)" [(ngModel)]="this.file" #filee="ngModel" required>
+      </p>
+
+      <div class="top-container">
+        <div class="top-butts-div"> 
+          <button class="top-butts" (click)="predictgo()">Predict from now</button>
+    
+        </div>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+</div>

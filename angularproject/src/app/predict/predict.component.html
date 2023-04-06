@@ -1,0 +1,52 @@
+
+
+
+
+<div class="container" id="fullclass" #fullclass>
+
+  <div class="one">
+    <div class="oneone">
+      <input [(ngModel)]="pred_duration" type="text" placeholder="Type required number">
+    </div> 
+    <div class="onetwo">
+      <select #duration (change)="onSelect(duration.value)">
+        <option value="" selected disabled hidden>Select duration</option>
+        <option value="Days" >Days</option>
+        <option value="Weeks">Weeks</option>
+        <option value="Months">Months</option>
+      </select> 
+    </div>
+    <div class="chartt">
+      <select #graph (change)="onSelectgraph(graph.value)">
+        <option value="" selected disabled hidden>Select chart type</option>
+        <option value="bar">Bar</option>
+      </select>
+    </div>
+    
+    
+  </div>
+  <div class="two">
+    <div class="twoone">
+      <button class="getch" (click)="calc()" [hidden]="getcbool">GenerateChart</button>
+    </div>
+  </div>
+  <div class="three" [hidden]="chartbool">
+    <div class="threeone">
+      <canvas id="canvas" >{{ chart }}</canvas>
+    </div>
+    <div class="threetwo">
+      <canvas id="canvas1" >{{ user_chart}}</canvas>
+    </div>
+  </div>
+  <div class="four">
+    <div class="fourone" [hidden]="chartbool">
+      Root Mean Square Error : {{rmse}}
+    </div>
+    <div class="fourtwo" [hidden]="chartbool">
+      Mean Absolute Percentage Error : {{mape}}
+    </div>
+    <div class="fourthree" [hidden]="chartbool">
+      Accuracy : {{accuracy}}
+    </div>
+  </div>
+</div>
